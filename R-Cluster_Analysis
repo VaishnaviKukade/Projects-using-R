@@ -1,0 +1,45 @@
+CLUSTER ANALYSIS IN R
+
+STEPS –We have installed R. Now we have to perform cluster analysis on the file WineKMC, hence we will install the skmeans package that will help us to perform k means clustering.
+To install skmeans, we have –
+	install.packages("skmeans", dependencies = TRUE)
+ 
+After installing the package, we activate the package by
+	library(skmeans)
+Now, we will check the directory and change if needed. We set the directory to our customized new folder where the csv file resides.
+ 
+
+Now, we will create a variable winedata that will read the WineKMC.csv file into R. It will be done by –
+	winedata <- read.csv("WineKmc.csv")
+
+Now, we will check the first few columns of the winedata
+	winedata[,1:9]
+ 
+
+	We can see that many values are displayed as NA. So to convert them to 0, we will use the is.na() function on the variable winedata that holds the wine data.
+	winedata[is.na(winedata)] <- 0 has been applied to change from NA to 0. This will be affected in the whole winedata where there is NA.
+
+To display the winedata after we changed it to 0,
+ 
+
+As the data is cleaned, we will start performing the clustering on the winedata.
+
+Now, we transpose the customers’ data starting from Adams to last Young. It starts with 8 till 107. We create the new variable winedata.transpose so that the winedata won’t be affected while performing clustering. The t function will help us to transpose the data. Few variables have been shown below –
+ 
+
+Now, we perform the k-means clustering on the transposed wine data using the skmeans package, with k=3 and method= “genetic”.
+
+After the clustering is done and the objects are divided into 3 clusters, winedata.clusters stores the clustering of the winedata.
+Now we will store the counts of the clusters back into 3 columns by storing it into winedata.clustercounts as shown below –
+
+Results & Profiling:
+After combining the winedata 1-7 variables and the 3 cluster counts, it will be easy to analyze-
+Now, we will sort the data by every cluster to see the characteristics in each cluster.
+Sort Cluster 1 – In this cluster we see that varietal Pinot Noir is used more. 
+
+Sort Cluster 2: After second sorting we can observe that all top clusters for low volume (minimum quantity) so that means preference is for minimum quantity -
+
+Sort Cluster 3: Here we can observe that all top 4 clusters are for champagne hence it is clearly more popular.
+
+Thus, Cluster analysis has been performed on the wine data using R.
+
