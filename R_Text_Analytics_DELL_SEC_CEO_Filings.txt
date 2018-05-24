@@ -1,0 +1,310 @@
+Week 8 Assignment - Exec Comp
+
+
+R CODE:
+
+For 2001
+
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000102140801501579/ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[47]]
+compensation.table
+compensation.table.data<-compensation.table[4:8,1:15]
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,3,5,7,9,11,13,15)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[4:4,c(1,3,5,7,9,11,13,15)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[5:5,c(1,3,5,7,9,11,13,15)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2013.csv")
+
+For 2002
+-------------------------------------------------------------------------------------------------------------------------------------
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095013402006292/d97249ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[28]]
+compensation.table
+compensation.table.data<-compensation.table[10:12,1:29]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,4,8,12,16,20,24,28)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[2:2,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[3:3,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2002.csv")
+
+For 2003
+-------------------------------------------------------------------------------------------------------------------------------------
+
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095013403008721/d05332ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[52]]
+compensation.table
+compensation.table.data<-compensation.table[10:12,1:29]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,4,8,12,16,20,24,28)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[2:2,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[3:3,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2003.csv")
+
+
+
+
+For 2004
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095013404008188/d15689ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[51]]
+compensation.table
+compensation.table.data<-compensation.table[10:12,1:29]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,4,8,12,16,20,24,28)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[2:2,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[3:3,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2004.csv")
+
+For 2005
+-------------------------------------------------------------------------------------------------------------------------------------
+
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095013405011115/d25345ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[58]]
+compensation.table
+compensation.table.data<-compensation.table[8:10,1:29]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,4,8,12,16,20,24,28)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[2:2,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[3:3,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2005.csv")
+
+
+For 2006
+-------------------------------------------------------------------------------------------------------------------------------------
+
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095013406011098/d36573ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[53]]
+compensation.table
+compensation.table.data<-compensation.table[8:10,1:29]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,4,8,12,16,20,24,28)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[2:2,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[3:3,c(1,5,9,13,17,21,25,29)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Other","Stock Awards","Shares Options","Other Comp")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2006.csv")
+
+
+For 2007
+---------
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095013407022403/d50578dedef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[74]]
+compensation.table
+compensation.table.data<-compensation.table[9:10,1:32]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,4,8,12,16,20,24,28,32)]
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards","NEIP","Other Comp","Total")
+compensation.table.data.final<-compensation.table.data.clean1
+write.csv(compensation.table.data.final, "Week8_Group9_2007.csv")
+
+
+For 2008
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095013408010544/d57231def14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[68]]
+compensation.table                      
+compensation.table.data<-compensation.table[4:7,1:31]
+compensation.table.data                          
+compensation.table.data.clean1<-compensation.table.data[4:4,c(1,4,8,12,16,18,20,28,31)]
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean1
+write.csv(compensation.table.data.clean1, "Week8_Group9_2008.csv")
+
+For 2009
+---------
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000119312509122251/ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[124]]
+compensation.table
+compensation.table.data<-compensation.table[3:5,1:25]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,3,6,9,13,16,19,22,25)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[2:2,c(1,3,6,9,13,16,19,22,25)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[3:3,c(1,2,5,8,12,15,18,21,24)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2009.csv")
+
+
+For 2010
+---------
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095012310053687/d72405ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[79]]
+compensation.table
+compensation.table.data<-compensation.table[7:9,1:32]
+compensation.table.data
+compensation.table.data.clean1<-compensation.table.data[1:1,c(1,4,8,12,16,20,24,28,32)]
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[2:2,c(1,4,8,12,16,20,24,28,32)]
+compensation.table.data.clean2
+compensation.table.data.clean3<-compensation.table.data[3:3,c(1,4,8,12,16,20,24,28,32)]
+compensation.table.data.clean3
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2010.csv")
+
+For 2011
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000095012311054499/d82379adef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[286]]
+compensation.table                      
+compensation.table.data<-compensation.table[2:4,1:31]
+compensation.table.data                          
+compensation.table.data.clean1<-compensation.table.data[2:2,c(1,4,8,12,16,18,19,20,30,32)]
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[3:3,c(1,4,8,12,16,18,19,20,30,32)]
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean3<-compensation.table.data[4:4,c(1,4,8,12,16,18,19,20,30,32)]
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.clean1, "Week8_Group9_2011.csv")
+
+
+
+
+
+
+
+For 2012
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/826083/000119312512247047/d355712ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[264]]
+compensation.table                      
+compensation.table.data<-compensation.table[2:4,1:31]
+compensation.table.data                          
+compensation.table.data.clean1<-compensation.table.data[2:2,c(1,4,8,12,13,16,19,20,30,32)]
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean1
+compensation.table.data.clean2<-compensation.table.data[3:3,c(1,4,8,12,13,16,19,20,30,32)]
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean3<-compensation.table.data[4:4,c(1,4,8,12,13,16,19,20,30,32)]
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.clean1, "Week8_Group9_2012.csv")
+
+
+
+For 2013
+--------
+install.packages("RCurl")
+library(RCurl)
+URL <-getURL("https://www.sec.gov/Archives/edgar/data/1109357/000119312510060703/ddef14a.htm")
+proxy.excelon.tables <- readHTMLTable(URL, header = TRUE)
+length(proxy.excelon.tables)
+compensation.table <- proxy.excelon.tables[[226]]
+compensation.table                      
+compensation.table.data<-compensation.table[2:4,1:31]
+compensation.table.data                          
+compensation.table.data.clean1<-compensation.table.data[2:2,c(1,4,8,12,16,19,24,28,32)]
+colnames(compensation.table.data.clean1) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean2<-compensation.table.data[3:3,c(1,3,7,11,15,19,23,27,31)]
+colnames(compensation.table.data.clean2) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean3<-compensation.table.data[4:4,c(1,3,7,11,15,19,23,27,31)]
+colnames(compensation.table.data.clean3) <- c("CEO Name","FiscalYear","Salary","Bonus","Stock Awards","Option Awards", "NEIP","Other Comp", "Total")
+compensation.table.data.clean4<-rbind(compensation.table.data.clean1,compensation.table.data.clean2,compensation.table.data.clean3)
+compensation.table.data.final<-compensation.table.data.clean4
+compensation.table.data.final[2,1]<-compensation.table.data.clean4[1,1]
+compensation.table.data.final[3,1]<-compensation.table.data.clean4[1,1]
+write.csv(compensation.table.data.final, "Week8_Group9_2013.csv")
+
+compensation.table.data.finale<-gsub("[^a-zA-Z0-9]","0",compensation.table.data.final)
+
+
+Vaishnavi Kukade                                                                                                                      A20381591  		
+
